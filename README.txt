@@ -1,0 +1,9 @@
+Instructions:
+
+1. Run 'annotate_mutations.pl' using the heavy and light chain fasta files of M15-like clonotypes or sequences. This script is also used to annotate mutations in influenza, SARS-CoV-2 (non-S2) and Malaria IGHV4-59 and IGKV3-20 antibody sequences. This file needs to have the germline V gene sequence as well.
+
+2. The output of this script will contain two columns: mutation in the first column and the IDs of sequences possessing this mutation in the second column.
+
+3. For the input to Figures 2B and C, run 'mutation_frequencies.R'. This script takes six files (a-f) as input per chain: the output of 'annotate_mutations.pl' run on (a) M15-like, (b) influenza, (c) SARS-CoV-2 (non-S2) and (d) Malaria IGHV4-59/IGKV3-20 sequences; (e) a sequence count file with two columns: first column with the antigen category (M15-like, Influenza, SARS-CoV-2 (non-S2), Malaria) and second column with the number of sequences in each category; (f) a convergent SHM file with the list of convergent mutations (found in at least three individuals) in the heavy/light chain. The output is a CSV file with a matrix of the frequency of each convergent mutation (columns) in each individual (rows) 
+
+3. For the linkage analysis in Figure S4, run 'convergent_mutation_linkage.R' for each donor. For a given donor, this script takes five files (a-e) as input: a convergent SHM file with the list of convergent mutations in (a) heavy chain and (b) light chain of M15;  (c) Heavy or light chain fasta file with M15-like sequences from the donor; the output of 'annotate_mutations.pl' run on M15-like (d) heavy and (e) light chain sequences. The output is a CSV file with a matrix of odds ratios of linkage between each pair of convergent SHMs in the donor.
